@@ -40,6 +40,9 @@ abstract class Contact(
                     photo = "content://com.example.android.people/photo/sheep_full.jpg".toUri()
                     photoMimeType = "image/jpeg"
                 }
+            },
+            object : Contact(1L, "Mike1", "cat.jpg") {
+                override fun reply(text: String) = buildReply().apply { this.text = "mmmmm" }
             }
         )
     }
